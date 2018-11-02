@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd">
+
+	<bean id="customLogFormatter" class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+		<property name="loggingType" value="MULTI_LINE" />
+		<property name="sqlPrefix" value="==========>>>>>>>>>> SQL :&#xD;&#xA;&#x9;&#x9;" />
+	</bean>
+
+<!-- 	<bean id="dataSourceOrg" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="#{application['db.driver.classname']}" />
+		<property name="url" value="#{application['db.url']}" />
+		<property name="username" value="#{application['db.username']}" />
+		<property name="password" value="#{application['db.password']}" />
+	</bean> -->
+
+</beans>

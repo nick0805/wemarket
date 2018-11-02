@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>message properties</comment>
+	
+	<!-- 중국어 메세지 -->
+	<entry key="msg_smtest1">試驗1</entry>
+	
+	<!-- 중국어 레이블 -->
+	<entry key="label_smtest001_001">試驗1 标签1</entry>
+	
+</properties>

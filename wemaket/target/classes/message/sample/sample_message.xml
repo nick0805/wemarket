@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>message properties</comment>
+	
+	<!-- 한국어 메세지 -->
+	<entry key="msg_smtest1">테스트1</entry>
+	<entry key="msg_smtest2">테스트 파라메터1={0}, 파라메터2={1} </entry>
+	
+	<!-- 한국어 레이블 -->
+	<entry key="label_smtest001_001">테스트1 레이블1</entry>
+	<entry key="label_smtest001_002">테스트1 레이블2</entry>
+	<entry key="label_smtest001_003">테스트1 레이블3</entry>
+	
+	<entry key="label_smtest002_001">테스트2 레이블1</entry>
+	<entry key="label_smtest002_002">테스트2 레이블2</entry>
+	<entry key="label_smtest002_003">테스트2 레이블3</entry>
+	
+</properties>

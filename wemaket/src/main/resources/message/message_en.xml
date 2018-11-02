@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>message properties</comment>
+	
+	<!-- 영어 시스템 메세지 -->
+	<entry key="msg_sys_error">System Error</entry>
+	
+	<!-- 영어 시스템 레이블 -->
+	
+</properties>

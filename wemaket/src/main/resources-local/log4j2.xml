@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration>
+<Configuration>
+	<properties>
+		<property name="pattern">%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%t] %logger{36} : %msg%n</property>
+		<property name="path">D:\dat1\logs\web</property>
+		<property name="fileName">WEB</property>
+		<property name="container">${sys:container.name}</property>
+	</properties>
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${pattern}" />
+		</Console>
+		<RollingFile
+			name="WEB_LOG"
+			fileName="${path}/${container}_${fileName}.log"
+			filePattern="${path}/${container}_${fileName}_%d{yyyy-MM-dd}.log">
+			<PatternLayout pattern="${pattern}" />
+			<DefaultRolloverStrategy>
+				<Delete basePath="${path}" maxDepth="2">
+					<IfLastModified age="10d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+		<RollingFile
+			name="SQL_LOG"
+			fileName="${path}/${container}_${fileName}_SQL_LOG.log"
+			filePattern="${path}/${container}_${fileName}_SQL_LOG_%d{yyyy-MM-dd}.log">
+			<PatternLayout pattern="${pattern}" />
+			<DefaultRolloverStrategy>
+				<Delete basePath="${path}" maxDepth="2">
+					<IfLastModified age="10d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="org.springframework" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="SQL_LOG" />
+		</Logger>
+		<Logger name="jdbc.sqlonly" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="SQL_LOG" />
+		</Logger>
+		<Logger name="jdbc.resultsettable" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="SQL_LOG" />
+		</Logger>
+
+
+		<Logger name="com.core.advice" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="WEB_LOG" />
+		</Logger>
+
+		<Logger name="com.core.interceptor" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="WEB_LOG" />
+		</Logger>
+
+		<Logger name="com.core.aop" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="WEB_LOG" />
+		</Logger>
+
+		<Logger name="com.sample" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="WEB_LOG" />
+		</Logger>
+
+		<Logger name="com.spc" level="DEBUG" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="WEB_LOG" />
+		</Logger>
+		
+
+		<Root level="OFF">
+			<AppenderRef ref="console" />
+	 
+		</Root>
+	</Loggers>
+</Configuration>
